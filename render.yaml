@@ -4,8 +4,10 @@ services:
     runtime: python
     plan: free
     buildCommand: |
+      echo "🎯 Installing dependencies"
       pip install -r requirements.txt
       python -m playwright install chromium
+      echo "✅ Chromium should be installed"
     startCommand: python fansale_bot.py
     envVars:
       - key: FANSALE_URL
