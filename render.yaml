@@ -5,7 +5,7 @@ services:
     plan: free
     buildCommand: |
       pip install -r requirements.txt
-      playwright install chromium
+      python -m playwright install chromium
     startCommand: python fansale_bot.py
     envVars:
       - key: FANSALE_URL
@@ -15,6 +15,6 @@ services:
       - key: CHAT_ID
         sync: false
       - key: HEADLESS
-        value: "true"
+        value: "false"
       - key: CHECK_INTERVAL
         value: "60"
